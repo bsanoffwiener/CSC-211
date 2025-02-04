@@ -6,7 +6,7 @@ public class Main {
         int randomNum = (int) (Math.random() * 10) + 1;
         System.out.println("Please guess a number.");
         int guess = kb.nextInt();
-        while (guess != randomNum) {
+        for (int i = 1; i < 5; i++) {
             if (guess > randomNum) {
                 System.out.println("Too high, try again.");
                 guess = kb.nextInt();
@@ -14,7 +14,13 @@ public class Main {
                 System.out.println("Too Low, try again.");
                 guess = kb.nextInt();
             }
+            else if (guess == randomNum) {
+                System.out.println("Congratulations! You've guessed the correct number.");
+                break;
+            }
         }
-        System.out.println("Congratulations! You've guessed the correct number.");
+        if (guess != randomNum) {
+            System.out.println("You have lost, The number was: " + randomNum);
+        }
     }
 }
