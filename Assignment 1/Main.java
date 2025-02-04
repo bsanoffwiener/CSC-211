@@ -5,7 +5,6 @@ public class Main {
         Scanner kb = new Scanner(System.in);
         int randomNum = (int) (Math.random() * 10) + 1;
         System.out.println("Please guess a number.");
-        System.out.println(randomNum);
         int guess = kb.nextInt();
         while (guess != randomNum) {
             if (guess > randomNum) {
