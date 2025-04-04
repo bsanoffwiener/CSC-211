@@ -46,6 +46,12 @@ public class RegistrationForm {
                 if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                     JOptionPane.showMessageDialog(frame, "Please fill in all fields.", "Error",
                             JOptionPane.ERROR_MESSAGE);
+                } else if (!password.equals(confirmPassword)) {
+                    JOptionPane.showMessageDialog(frame, "Passwords do not match.", "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                } else if (!email.contains("@")) {
+                    JOptionPane.showMessageDialog(frame, "Invalid email address.", "Error",
+                            JOptionPane.ERROR_MESSAGE);
                 } else {
                     String message = "Name: " + name + "\nEmail: " + email +
                             "\nPassword: " + password + "\nConfirm Password: " + confirmPassword;
